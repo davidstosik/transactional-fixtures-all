@@ -12,4 +12,10 @@ RSpec.describe Article, type: :model do
 
     expect(Article.count).to eq 1
   end
+
+  it "does not fail when using `_all` ActiveRecord method" do
+    3.times { |i| Article.create(title: "article #{i}") }
+
+    Article.delete_all
+  end
 end
