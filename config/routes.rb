@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :articles
+
+  get :update_all_articles, to: "update_all_articles#index"
+  root to: "articles#index"
 end
